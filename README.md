@@ -14,7 +14,7 @@ Each grapheme has been given an associated stresscode:<p>
 ## There will be five experiments:<p>
 
 Baseline Prediction - Given the grapheme without a stress, predict stress placement <br>
-n.b. in this notation, the accent is on the preceding vowel (e.g. on the \<a>\)<br>
+n.b. in this notation (and depending on your device), the accent is on the preceding vowel (e.g. on the \<a>\)<br>
 Source: а х н у в ш и м <br>
 Target: а́ х н у в ш и м <br>
 <br>
