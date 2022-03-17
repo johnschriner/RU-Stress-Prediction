@@ -33,6 +33,6 @@ Target: а́ х н у в ш и м ахнуть<br>
 <br>
 Stress Prediction with morphological feature - Given the word's morphological features, predict the stress placement<br>
 n.b. Word Error Rate (WER) will be calculated on predicting the stress, not the precise morphological features<br>
-Source: а х н у в ш и м ахнуть<br>
-Target: а́ х н у в ш и м ахнуть<br>
+Source: а х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
+Target: а́ х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
 
