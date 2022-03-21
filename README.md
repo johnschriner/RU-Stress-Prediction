@@ -35,4 +35,12 @@ Stress Prediction with morphological feature - Given the word's morphological fe
 n.b. Word Error Rate (WER) will be calculated on predicting the stress, not the precise morphological features<br>
 Source: а х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
 Target: а́ х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
+  
+|INFO|Number of Lines|
+|---|---|
+|INFO: Total set:|	301,472 lines|
+|INFO: Train set:|	241,177 lines|
+|INFO: Development set:|	30,147 lines|
+|INFO: Test set:|	30,148 lines|
+
 
