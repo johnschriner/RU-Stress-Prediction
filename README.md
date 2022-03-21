@@ -250,6 +250,8 @@ D-4805	-0.3482401371002197	н е н а к о ́ м Pron Neg Loc
 ```
 `WER = 25.70`<br>
   
+## Conclusions and Discussion
+While morphological features may be copied over successfully during training, deriving the lemma isn't nearly as straight-forward.<br>
 
 
   
