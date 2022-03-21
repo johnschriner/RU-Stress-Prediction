@@ -27,14 +27,33 @@ Source: а х н у в ш и м 2<br>
 Target: а́ х н у в ш и м 2<br>
 <br>
 Stress Prediction with lemma feature - Given the word's lemma, predict the stress placement<br>
-n.b. Word Error Rate (WER) will be calculated on predicting the stress, not the lemma form<br>
 Source: а х н у в ш и м ахнуть<br>
 Target: а́ х н у в ш и м ахнуть<br>
 <br>
 Stress Prediction with morphological feature - Given the word's morphological features, predict the stress placement<br>
-n.b. Word Error Rate (WER) will be calculated on predicting the stress, not the precise morphological features<br>
+n.b. Word Error Rate (WER) will be calculated on predicting the stress, we'll note the errors in copying the morph features.<br>
 Source: а х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
 Target: а́ х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
+<br>
+Oxytone Stress:  17111/301472 = 5.67%<br>
+Paroxytone Stress:  76269/301472 = 25.29%<br>
+Proparoxytone Stress:  101209/301472 = 33.57%<br>
+<br>
+Fourth syllable from the end:   68878/301472 = 22.84%<br>
+Fifth syllable from the end:   31325/301472 = 10.39%<br>
+Sixth syllable from the end:  6378/301472 = 2.11%<br>
+Seventh syllable from the end: 294/301472 = .09%<br>
+Eighth or more syllables from the end:  8/301472 = .002%<br>
+<br>
+No stress indicated: /301472<br>
+
+Simply predicting Paroxytone (1) through (3) is correct for 81.7 of the data.<br>
+  
+  
+## Experiment01
+### Baseline Prediction - Given the grapheme without a stress, predict stress placement <br>
+Source: а х н у в ш и м<br>
+Target: а́ х н у в ш и м<br>
   
 |INFO|Number of Lines|
 |---|---|
@@ -58,15 +77,15 @@ Target: а́ х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
   > 301472 total<br>
 
 ```
-  fairseq-preprocess \
-      --source-lang ru.s \
-      --target-lang ru.t \
-      --trainpref train \
-      --validpref dev \
-      --testpref test \
-      --tokenizer space \
-      --thresholdsrc 2 \
-      --thresholdtgt 2
+fairseq-preprocess \
+    --source-lang ru.s \
+    --target-lang ru.t \
+    --trainpref train \
+    --validpref dev \
+    --testpref test \
+    --tokenizer space \
+    --thresholdsrc 2 \
+    --thresholdtgt 2
 ```
 
 ```
@@ -104,4 +123,137 @@ fairseq-generate \
     > predictions.txt  
 ```
 `WER = 26.41`<br>
+
+  ```  
+Correctly predicted:
+S-26026    э к р а н е
+T-26026    э к р а ́ н е
+H-26026    -0.21708765625953674    э к р а ́ н е
+D-26026    -0.21708765625953674    э к р а ́ н е
+
+Incorrectly predicted:
+S-2786    о р у щ е м
+T-2786    о р у ́ щ е м
+H-2786    -0.13091009855270386    о ́ р у щ е м
+D-2786    -0.13091009855270386    о ́ р у щ е м
+```
+  
+## Experiment02
+### Stresscode Prediction α - Trained on a grapheme and its calculated stresscode, predict the stresscode<br>
+Source: а х н у в ш и м<br>
+Target: 2<br>
+<br>
+```
+Correctly predicted (электросталеплави́льными):
+S-9651	э л е к т р о с т а л е п л а в и л ь н ы м и
+T-9651	2
+H-9651	-0.3887440264225006	2
+D-9651	-0.3887440264225006	2
+
+Incorrectly predicted (и́бисам):
+S-5229	и б и с а м
+T-5229	2
+H-5229	-0.44318196177482605	1
+D-5229	-0.44318196177482605	1
+```  
+`WER = 25.81`<br>
+  
+## Experiment03
+### Stresscode Prediction β - Given the grapheme with a trailing stresscode, predict stress placement.<br>
+Source: а х н у в ш и м 2<br>
+Target: а́ х н у в ш и м 2<br>
+<br>
+```
+Correctly predicted:
+S-17488	а н г е л ы 2
+T-17488	а ́ н г е л ы 2
+H-17488	-0.12254472076892853	а ́ н г е л ы 2
+D-17488	-0.12254472076892853	а ́ н г е л ы 2
+  
+Incorrectly predicted (due to error in the source data!):
+  From Zaliznjak:
+  Pronunciation (orthographic with stress): ['с', 'у́', 'ю́', 'щ', 'и', 'й', 'с', 'я']
+  Segments (with stress):су́ю́щийся
+
+S-7883	с у ю щ и м с я 2
+T-7883	с у ́ ю ́ щ и м с я 2
+H-7883	-0.13421708345413208	с у ́ ю щ и м с я 2
+D-7883	-0.13421708345413208	с у ́ ю щ и м с я 2
+
+S-7336	о н т о г е н и и 1
+T-7336	о н т о г е н и ́ и 1
+H-7336	-0.22257477045059204	о н т о г е ́ н и и 1
+D-7336	-0.22257477045059204	о н т о г е ́ н и и 1
+
+`WER = 14.94`<br>
+```
+
+## Experiment04
+### Stress Prediction with lemma feature - Given the word's lemma, predict the stress placement<br>
+n.b. Word Error Rate (WER) will be calculated on predicting the stress, and the lemma form should always be copied correctly<br>
+Source: а х н у в ш и м ахнуть<br>
+Target: а́ х н у в ш и м ахнуть<br>
+<br>
+
+```
+Correctly predicted:  
+S-419	и с к а л а искать
+T-419	и с к а ́ л а искать
+H-419	-0.11312980204820633	и с к а ́ л а искать
+D-419	-0.11312980204820633	и с к а ́ л а искать
+
+Correctly predicted stress, incorrectly predicted lemma:
+S-16358	о р г и я х оргия
+T-16358	о ́ р г и я х оргия
+H-16358	-1.0655725002288818	о ́ р г и я х иней
+D-16358	-1.0655725002288818	о ́ р г и я х иней
+  
+Incorrectly predicted (ё):
+S-6917	я с ы р ё м ясырь
+T-6917	я с ы р ё м ясырь
+H-6917	-1.1663931608200073	я с ы ́ р ё м ярый
+D-6917	-1.1663931608200073	я с ы ́ р ё м ярый
+
+Incorrectly predicted:
+S-813	и з б н о й избной
+T-813	и з б н о ́ й избной
+H-813	-0.8719756007194519	и ́ з б н о й шоковый
+D-813	-0.8719756007194519	и ́ з б н о й шоковый
+```
+`WER = 53.20`<br>
+High WER due primarily to incorrect lemma prediction.. I will compute WER for stress only.<br>
+  
+## Experiment05
+### Stress Prediction with morphological feature - Given the word's morphological features, predict the stress placement<br>
+n.b. Word Error Rate (WER) will be calculated on predicting the stress, not the precise morphological features<br>
+Source: а х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
+Target: а́ х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
+
+```
+Correctly predicted:
+n.b. the morphological features are being copied properly
+S-9938	щ у р о в N Msc Anim Pl Acc
+T-9938	щ у ́ р о в N Msc Anim Pl Acc
+H-9938	-0.13937562704086304	щ у ́ р о в N Msc Anim Pl Acc
+D-9938	-0.13937562704086304	щ у ́ р о в N Msc Anim Pl Acc
+
+Incorrectly predicted:
+S-18445	ш п и к и N Msc Inan Pl Acc
+T-18445	ш п и ́ к и N Msc Inan Pl Acc
+H-18445	-0.1895066499710083	ш п и к и ́ N Msc Inan Pl Acc
+D-18445	-0.1895066499710083	ш п и к и ́ N Msc Inan Pl Acc
+
+S-4805	н е н а к о м Pron Neg Loc
+T-4805	н е ́ н а к о м Pron Neg Loc
+H-4805	-0.3482401371002197	н е н а к о ́ м Pron Neg Loc
+D-4805	-0.3482401371002197	н е н а к о ́ м Pron Neg Loc
+```
+`WER = 25.70`<br>
+  
+
+
+  
+
+  
+
   
