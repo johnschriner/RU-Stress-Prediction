@@ -42,5 +42,66 @@ Target: а́ х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
 |INFO: Train set:|	241,177 lines|
 |INFO: Development set:|	30,147 lines|
 |INFO: Test set:|	30,148 lines|
+  
+  <code>wc -l *.s</code>
+  
+  > 30147 dev.ru.s<br>
+  > 30148 test.ru.s<br>
+  > 241177 train.ru.s<br>
+  > 301472 total<br>
 
+  <code>wc -l *.t</code>
+   
+  > 30147 dev.ru.t<br>
+  > 30148 test.ru.t<br>
+  > 241177 train.ru.t<br>
+  > 301472 total<br>
 
+```
+  fairseq-preprocess \
+      --source-lang ru.s \
+      --target-lang ru.t \
+      --trainpref train \
+      --validpref dev \
+      --testpref test \
+      --tokenizer space \
+      --thresholdsrc 2 \
+      --thresholdtgt 2
+```
+
+```
+fairseq-train \
+    data-bin \
+    --source-lang ru.s \
+    --target-lang ru.t \
+    --encoder-bidirectional \
+    --seed 230 \
+    --arch lstm \
+    --dropout 0.2 \
+    --lr .001 \
+    --max-update 800\
+    --no-epoch-checkpoints \
+    --batch-size 50 \
+    --clip-norm 1 \
+    --label-smoothing .1 \
+    --optimizer adam \
+    --clip-norm 1 \
+    --criterion label_smoothed_cross_entropy\
+    --encoder-embed-dim 128 \
+    --decoder-embed-dim 128 \
+    --encoder-layers 2 \
+    --decoder-layers 2 \
+```  
+
+```
+fairseq-generate \
+    data-bin \
+    --source-lang ru.s \
+    --target-lang ru.t \
+    --path checkpoints/checkpoint_best.pt \
+    --gen-subset valid \
+    --beam 8 \
+    > predictions.txt  
+```
+`WER = 26.41`<br>
+  
