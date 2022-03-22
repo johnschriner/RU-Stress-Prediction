@@ -1,6 +1,43 @@
 # RU-Stress-Prediction
 using Zaliznjak's dictionary and stresscodes I use FairSeq to predict Russian stress
 
+## The Data
+Adjectives:<br>
+антисейсми́ческой = anti-seismic<br>
+антиле́нинская = anti-Leninist (n.b. Leninist is not in the dictionary)<br>
+антиамерика́нск = anti-American (n.b. American is not in the dictionary)<br>
+южноамерика́нско = South American<br>
+шутовско́ = clownish<br>
+экспе́ртна = expert<br>
+элега́нтной = elegant<br>
+ма́лом = small<br>
+у́треннею = morning<br>
+экстерриториа́льные = extraterritorial<br>
+юлиа́нским = Julian (as in the calendar)<br>
+шо́рт = short<br>
+языкотво́рческому = language-creative<br>
+<br>
+Comparative Adjectives:<br>
+44874/301472 = 14%
+поуро́дливей = uglier
+поуде́льнее = more private<br>
+понорма́льней = more normal<br>
+понебезопа́сней = more secure<br>
+починне́е = better<br>
+поанорма́льнее = more abnormal<br>
+поненорма́льнее = more abnormal<br>
+
+
+Verbs:
+Because the data takes into account morphology, many words, particularly verbs have 10 or more entries.  <br>
+шосси́ровавшей (on the road; to highway(?)) has 48 entries.  эшелонировавшие (to arrange in echelon formation) has 24 entries.<br>
+This could skew the training as it gives more weigh to certain stress placement, and even provides exact copies in dev and test that the NN was trained on.<br>
+
+
+
+
+
+
 ## Stresscodes
 Each grapheme has been given an associated stresscode:<p>
 
