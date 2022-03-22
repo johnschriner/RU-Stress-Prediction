@@ -289,10 +289,10 @@ D-4805	-0.3482401371002197	н е н а к о ́ м Pron Neg Loc
   
 ## Conclusions and Discussion
 While morphological features may be copied over successfully during training, deriving the lemma isn't nearly as straight-forward.<br>
-TO DO: Look at adjectives -- is it true that they are REGULARLY stressed on the first syllable? (Jouravlev and Lupker) No, I don't think so.
-TO DO: Summarize Zaliznjak's work and what the data are
-TO DO: Look more into consistency, lexical stress.
-TO DO: Hall & Sproat's contribution
+TO DO: Look at adjectives -- is it true that they are REGULARLY stressed on the first syllable? (Jouravlev and Lupker) No, I don't think so.<br>
+TO DO: Summarize Zaliznjak's work and what the data are<br>
+TO DO: Look more into consistency, lexical stress.<br>
+TO DO: Hall & Sproat's contribution<br>
 
   
 
