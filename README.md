@@ -73,7 +73,7 @@ Source: а х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
 Target: а́ х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
 <br>
 Oxytone Stress:  17111/301472 = 5.67%<br>
-Paroxytone Stress:  76269/301472 = 25.29% (FIX THIS)<br>
+Paroxytone Stress:  75196/301472 = 24.94%<br>
 Proparoxytone Stress:  101209/301472 = 33.57%<br>
 <br>
 Fourth syllable from the end:   68878/301472 = 22.84%<br>
@@ -84,7 +84,7 @@ Seven or more syllables from the end: 302/301472 = .10%<br>
 <br>
 No stress indicated: 1073/301472 = .35%<br>
 
-Simply predicting Paroxytone (1) through (3) is correct for _______ of the data.<br>
+Simply predicting Paroxytone (stresscode 1) through the fourth syllable from the end (stresscode 3) is correct for 81.35% of the data.<br>
   
   
 ## Experiment01
@@ -289,7 +289,10 @@ D-4805	-0.3482401371002197	н е н а к о ́ м Pron Neg Loc
   
 ## Conclusions and Discussion
 While morphological features may be copied over successfully during training, deriving the lemma isn't nearly as straight-forward.<br>
-
+TO DO: Look at adjectives -- is it true that they are REGULARLY stressed on the first syllable? (Jouravlev and Lupker) No, I don't think so.
+TO DO: Summarize Zaliznjak's work and what the data are
+TO DO: Look more into consistency, lexical stress.
+TO DO: Hall & Sproat's contribution
 
   
 
