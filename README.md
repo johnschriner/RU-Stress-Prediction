@@ -282,15 +282,20 @@ D-4805	-0.3482401371002197	н е н а к о ́ м Pron Neg Loc
 ```
 `WER = 25.70`<br>
   
+
+  
+## Experiment06  - This will be re-prepared and re-done.
+### Stress Prediction with POS feature - Given the word's part of speech features, predict the stress placement<br>
+Source: а х н у в ш и м V<br>
+Target: а́ х н у в ш и м<br>
+
+  
 ## Conclusions and Discussion
 While morphological features may be copied over successfully during training, deriving the lemma isn't nearly as straight-forward.<br>
 TO DO: Look at adjectives -- is it true that they are REGULARLY stressed on the first syllable? (Jouravlev and Lupker) No, I don't think so.<br>
 TO DO: Summarize Zaliznjak's work and what the data are<br>
 TO DO: Look more into consistency, lexical stress.<br>
 TO DO: Hall & Sproat's contribution<br>
-
-  
-
   
 
   
