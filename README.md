@@ -48,6 +48,11 @@ Because the data takes into account morphology, many words, particularly verbs h
 This could skew the training as it gives more weigh to certain stress placement, and even provides exact copies in dev and test that the NN was trained on.<br>
 
 Nouns:<br>
+No known regularity.
+We know that nouns that end in -ism have the stress on the и́:
+эмпириомони́змом
+n.b. Empiriomonism (“Empiriomonizm”) is the fundamental philosophical work of Alexander Bogdanov, published by him in 1906 in St. Petersburg. The book is an attempt at a synthesis of Marxism and positivism. It was sharply criticized by the author's associates (Lenin and Plekhanov) for revisionism and subjective idealism.<br>
+
 
 
 ## Stresscodes
