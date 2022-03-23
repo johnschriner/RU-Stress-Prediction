@@ -1,21 +1,19 @@
 # RU-Stress-Prediction
-using Zaliznjak's dictionary and stresscodes I use FairSeq to predict Russian stress
+using Zaliznjak's dictionary and stresscodes I use FairSeq to predict Russian stress<br>
 
 ## The Data
 
-Parts of Speech:
-Adjectives = 97795/301472 = 32.43%
-Adverbs = 159/301472 = .05%
-Verbs = 141081/301472 = 46.79%
-Nouns = 51344/301472 = 17.03%
-Determiners = 7668/301472 = 2.54%
-Pronoun = 3285/301472 = 1.08%
-Pr = 19/301472 = .006%
-CC = 10/301472 = .003%
-CS = 10/301472 = .003%
-Interjection = 84/301472 = .02%
-
-
+Parts of Speech:<br>
+Adjectives = 97795/301472 = 32.43%<br>
+Adverbs = 159/301472 = .05%<br>
+Verbs = 141081/301472 = 46.79%<br>
+Nouns = 51344/301472 = 17.03%<br>
+Determiners = 7668/301472 = 2.54%<br>
+Pronoun = 3285/301472 = 1.08%<br>
+Pr = 19/301472 = .006%<br>
+CC = 10/301472 = .003%<br>
+CS = 10/301472 = .003%<br>
+Interjection = 84/301472 = .02%<br>
 
 
 Adjectives:<br>
@@ -44,10 +42,12 @@ Comparative Adjectives:<br>
 поненорма́льнее = more abnormal<br>
 
 
-Verbs:
+Verbs:<br>
 Because the data takes into account morphology, many words, particularly verbs have 10 or more entries.  <br>
 шосси́ровавшей (on the road; to highway(?)) has 48 entries.  эшелонировавшие (to arrange in echelon formation) has 24 entries.<br>
 This could skew the training as it gives more weigh to certain stress placement, and even provides exact copies in dev and test that the NN was trained on.<br>
+
+Nouns:<br>
 
 
 ## Stresscodes
@@ -199,9 +199,11 @@ Target: а́ х н у в ш и м<br>
 ## Conclusions and Discussion
 While morphological features may be copied over successfully during training, deriving the lemma isn't nearly as straight-forward.<br>
 TO DO: Look at adjectives -- is it true that they are REGULARLY stressed on the first syllable? (Jouravlev and Lupker) No, I don't think so.<br>
+TO DO: Look at other POS
 TO DO: Summarize Zaliznjak's work and what the data are<br>
 TO DO: Look more into consistency, lexical stress.<br>
 TO DO: Hall & Sproat's contribution<br>
+TO DO: lexicon of stress homographs, a quantitative write-up and appendix<br>
   
 
   
