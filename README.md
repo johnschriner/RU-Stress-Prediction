@@ -63,11 +63,15 @@ Stress Prediction with lemma feature - Given the word's lemma, predict the stres
 Source: а х н у в ш и м ахнуть<br>
 Target: а́ х н у в ш и м<br>
 <br>
-Stress Prediction with morphological feature - Given the word's morphological features, predict the stress placement<br>
+Stress Prediction with morphological feature  α - Given all of the word's morphological features, predict the stress placement<br>
 n.b. Word Error Rate (WER) will be calculated on predicting the stress, we'll note the errors in copying the morph features.<br>
 Source: а х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
 Target: а́ х н у в ш и м<br>
 <br>
+Stress Prediction with morphological feature β - Given only word's part of speech feature, predict the stress placement<br>
+n.b. Word Error Rate (WER) will be calculated on predicting the stress, we'll note the errors in copying the morph features.<br>
+Source: а х н у в ш и м V<br>
+Target: а́ х н у в ш и м<br>
 Oxytone Stress:  17111/301472 = 5.67%<br>
 Paroxytone Stress:  75196/301472 = 24.94%<br>
 Proparoxytone Stress:  101209/301472 = 33.57%<br>
