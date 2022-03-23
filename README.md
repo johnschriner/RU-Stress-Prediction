@@ -34,10 +34,6 @@ Because the data takes into account morphology, many words, particularly verbs h
 This could skew the training as it gives more weigh to certain stress placement, and even provides exact copies in dev and test that the NN was trained on.<br>
 
 
-
-
-
-
 ## Stresscodes
 Each grapheme has been given an associated stresscode:<p>
 
@@ -61,16 +57,16 @@ Target: 2<br>
 <br>
 Stresscode Prediction β - Given the grapheme with a trailing stresscode, predict stress placement.<br>
 Source: а х н у в ш и м 2<br>
-Target: а́ х н у в ш и м 2<br>
+Target: а́ х н у в ш и м<br>
 <br>
 Stress Prediction with lemma feature - Given the word's lemma, predict the stress placement<br>
 Source: а х н у в ш и м ахнуть<br>
-Target: а́ х н у в ш и м ахнуть<br>
+Target: а́ х н у в ш и м<br>
 <br>
 Stress Prediction with morphological feature - Given the word's morphological features, predict the stress placement<br>
 n.b. Word Error Rate (WER) will be calculated on predicting the stress, we'll note the errors in copying the morph features.<br>
 Source: а х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
-Target: а́ х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
+Target: а́ х н у в ш и м<br>
 <br>
 Oxytone Stress:  17111/301472 = 5.67%<br>
 Paroxytone Stress:  75196/301472 = 24.94%<br>
