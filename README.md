@@ -32,7 +32,7 @@ Adjectives:<br>
 языкотво́рческому = language-creative<br>
 <br>
 Comparative Adjectives:<br>
-44874/301472 = 14%
+44874/301472 = 14% of all words<br>
 поуро́дливей = uglier
 поуде́льнее = more private<br>
 понорма́льней = more normal<br>
