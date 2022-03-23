@@ -191,10 +191,10 @@ D-5229	-0.44318196177482605	1
 ```  
 `WER = 25.81`<br>
   
-## Experiment03
+## Experiment03 - This will be re-prepared and re-done.
 ### Stresscode Prediction β - Given the grapheme with a trailing stresscode, predict stress placement.<br>
 Source: а х н у в ш и м 2<br>
-Target: а́ х н у в ш и м 2<br>
+Target: а́ х н у в ш и м<br>
 <br>
 ```
 Correctly predicted:
@@ -221,11 +221,11 @@ D-7336	-0.22257477045059204	о н т о г е ́ н и и 1
 `WER = 14.94`<br>
 ```
 
-## Experiment04
+## Experiment04 - This will be re-prepared and re-done.
 ### Stress Prediction with lemma feature - Given the word's lemma, predict the stress placement<br>
 n.b. Word Error Rate (WER) will be calculated on predicting the stress, and the lemma form should always be copied correctly<br>
 Source: а х н у в ш и м ахнуть<br>
-Target: а́ х н у в ш и м ахнуть<br>
+Target: а́ х н у в ш и м<br>
 <br>
 
 ```
@@ -256,11 +256,10 @@ D-813	-0.8719756007194519	и ́ з б н о й шоковый
 `WER = 53.20`<br>
 High WER due primarily to incorrect lemma prediction.. I will compute WER for stress only.<br>
   
-## Experiment05
+## Experiment05  - This will be re-prepared and re-done.
 ### Stress Prediction with morphological feature - Given the word's morphological features, predict the stress placement<br>
-n.b. Word Error Rate (WER) will be calculated on predicting the stress, not the precise morphological features<br>
 Source: а х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
-Target: а́ х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
+Target: а́ х н у в ш и м<br>
 
 ```
 Correctly predicted:
