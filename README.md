@@ -3,13 +3,13 @@ using Zaliznjak's dictionary and stresscodes I use FairSeq to predict Russian st
 
 ## The Data
 
-Parts of Speech:<br>
-Adjectives = 97795/301472 = 32.43%<br>
-Adverbs = 159/301472 = .05%<br>
+*Parts of Speech:*<br>
 Verbs = 141081/301472 = 46.79%<br>
+Adjectives = 97795/301472 = 32.43%<br>
 Nouns = 51344/301472 = 17.03%<br>
 Determiners = 7668/301472 = 2.54%<br>
 Pronoun = 3285/301472 = 1.08%<br>
+Adverbs = 159/301472 = .05%<br>
 Pr = 19/301472 = .006%<br>
 CC = 10/301472 = .003%<br>
 CS = 10/301472 = .003%<br>
@@ -45,7 +45,7 @@ Comparative Adjectives:<br>
 Verbs:<br>
 Because the data takes into account morphology, many words, particularly verbs have 10 or more entries.  <br>
 шосси́ровавшей (on the road; to highway(?)) has 48 entries.  эшелонировавшие (to arrange in echelon formation) has 24 entries.<br>
-This could skew the training as it gives more weigh to certain stress placement, and even provides exact copies in dev and test that the NN was trained on.<br>
+This could skew the training as it gives more weigh to certain stress placement, and even provides exact copies (for morphological experiments) in dev and test that the NN was trained on.<br>
 
 Nouns:<br>
 No known regularity.
@@ -166,18 +166,71 @@ fairseq-generate \
     --beam 8 \
     > predictions.txt  
 ```
-
-
- ```  
+<br>
 Experiment01 - Baseline Prediction - Given the grapheme without a stress, predict stress placement <br>
 n.b. in this notation (and depending on your device), the accent is on the preceding vowel (e.g. on the \<a>\)<br>
 Source: а х н у в ш и м <br>
 Target: а́ х н у в ш и м <br>
 <br>
+
+```
+fairseq-train \
+    data-bin \
+    --source-lang ru.s \
+    --target-lang ru.t \
+    --encoder-bidirectional \
+    --seed 156 \
+    --arch lstm \
+    --dropout 0.2 \
+    --lr .001 \
+    --max-update 800\
+    --no-epoch-checkpoints \
+    --batch-size 500 \
+    --clip-norm 1 \
+    --label-smoothing .1 \
+    --optimizer adam \
+    --clip-norm 1 \
+    --criterion label_smoothed_cross_entropy \
+    --encoder-embed-dim 128 \
+    --decoder-embed-dim 128 \
+    --encoder-layers 1 \
+    --decoder-layers 1 \
+```
+  
+`WER = 25.23`
+  
 Experiment02 - Stresscode Prediction α - Trained on a grapheme and its calculated stresscode, predict the stresscode<br>
 Source: а х н у в ш и м<br>
 Target: 2<br>
 <br>
+ 
+```
+fairseq-train \
+    data-bin \
+    --source-lang ru.s \
+    --target-lang ru.t \
+    --encoder-bidirectional \
+    --seed 156 \
+    --arch lstm \
+    --dropout 0.2 \
+    --lr .001 \
+    --max-update 800\
+    --no-epoch-checkpoints \
+    --batch-size 500 \
+    --clip-norm 1 \
+    --label-smoothing .1 \
+    --optimizer adam \
+    --clip-norm 1 \
+    --criterion label_smoothed_cross_entropy \
+    --encoder-embed-dim 128 \
+    --decoder-embed-dim 128 \
+    --encoder-layers 1 \
+    --decoder-layers 1 \
+```
+
+ <br>
+Noted errors were on successful placement of _secondary_ stress (the grave accent), something that the stresscode-creation was unaware of.<br>
+
 Experiment03 - Stresscode Prediction β - Given the grapheme with a trailing stresscode, predict stress placement.<br>
 n.b. this experiment is to guage the efficacy of the stresscodes; the results should be near-perfect <br>
 Source: а х н у в ш и м 2<br>
@@ -187,10 +240,64 @@ Experiment04 - Stress Prediction with lemma feature - Given the word's lemma, pr
 Source: а х н у в ш и м ахнуть<br>
 Target: а́ х н у в ш и м<br>
 <br>
+
+```
+fairseq-train \
+    data-bin \
+    --source-lang ru.s \
+    --target-lang ru.t \
+    --encoder-bidirectional \
+    --seed 156 \
+    --arch lstm \
+    --dropout 0.2 \
+    --lr .001 \
+    --max-update 800\
+    --no-epoch-checkpoints \
+    --batch-size 500 \
+    --clip-norm 1 \
+    --label-smoothing .1 \
+    --optimizer adam \
+    --clip-norm 1 \
+    --criterion label_smoothed_cross_entropy \
+    --encoder-embed-dim 128 \
+    --decoder-embed-dim 128 \
+    --encoder-layers 1 \
+    --decoder-layers 1 \
+```
+  
+`WER = 18.27`
+  
 Experiment05 - Stress Prediction with POS feature - Given the word's lemma, predict the stresscode<br>
 Source: а х н у в ш и м ахнуть<br>
 Target: 2   <br>
 <br>
+
+```
+fairseq-train \
+    data-bin \
+    --source-lang ru.s \
+    --target-lang ru.t \
+    --encoder-bidirectional \
+    --seed 102 \
+    --arch lstm \
+    --dropout 0.2 \
+    --lr .001 \
+    --max-update 800\
+    --no-epoch-checkpoints \
+    --batch-size 500 \
+    --clip-norm 1 \
+    --label-smoothing .1 \
+    --optimizer adam \
+    --clip-norm 1 \
+    --criterion label_smoothed_cross_entropy \
+    --encoder-embed-dim 128 \
+    --decoder-embed-dim 128 \
+    --encoder-layers 1 \
+    --decoder-layers 1 \
+```
+  
+`WER = 6.93`
+
 Experiment06 - Stress Prediction with morphological feature  α - Given all of the word's morphological features, predict the stress placement<br>
 n.b. Word Error Rate (WER) will be calculated on predicting the stress, we'll note the errors in copying the morph features.<br>
 Source: а х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
