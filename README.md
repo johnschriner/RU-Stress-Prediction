@@ -107,12 +107,14 @@ Seven or more syllables from the end: 302/301472 = .10%<br>
 
 <br>
 No stress indicated: 1073/301472 = .35%<br>
-These words are hyphenated adjectives 
+These words are almost entirely hyphenated adjectives 
   e.g. покальциево-фосфорнее (pocalcium-phosphorus(?)) and 
   подекоративно-демонстрационнее (decorative-demonstrative) 
   поумильно-патриархальней (wisely patriarchal)
   эллинско-христианское (Hellenic-Christian)
   They contain no stress information.<br>
+  Another example is щенках (puppies), a noun that contains no stress information.
+  
 
 Simply predicting Paroxytone (stresscode 1) through the fourth syllable from the end (stresscode 3) is correct for 81.35% of the data.<br>
 
