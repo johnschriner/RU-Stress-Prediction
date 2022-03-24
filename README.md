@@ -65,7 +65,7 @@ Each grapheme has been given an associated stresscode:<p>
 <br>
 -1 for words without explicit stress in the dataset<br>
 <br>
-## There will be five experiments:<p>
+## There will be seven experiments:<p>
 
 Experiment01 - Baseline Prediction - Given the grapheme without a stress, predict stress placement <br>
 n.b. in this notation (and depending on your device), the accent is on the preceding vowel (e.g. on the \<a>\)<br>
@@ -138,22 +138,22 @@ fairseq-train \
     --source-lang ru.s \
     --target-lang ru.t \
     --encoder-bidirectional \
-    --seed 230 \
+    --seed 156 \
     --arch lstm \
     --dropout 0.2 \
     --lr .001 \
     --max-update 800\
     --no-epoch-checkpoints \
-    --batch-size 50 \
+    --batch-size 500 \
     --clip-norm 1 \
     --label-smoothing .1 \
     --optimizer adam \
     --clip-norm 1 \
-    --criterion label_smoothed_cross_entropy\
+    --criterion label_smoothed_cross_entropy \
     --encoder-embed-dim 128 \
     --decoder-embed-dim 128 \
-    --encoder-layers 2 \
-    --decoder-layers 2 \
+    --encoder-layers 1 \
+    --decoder-layers 1 \
 ```  
 
 ```
@@ -166,9 +166,9 @@ fairseq-generate \
     --beam 8 \
     > predictions.txt  
 ```
-`WER = 26.41`<br>
 
-  ```  
+
+ ```  
 Experiment01 - Baseline Prediction - Given the grapheme without a stress, predict stress placement <br>
 n.b. in this notation (and depending on your device), the accent is on the preceding vowel (e.g. on the \<a>\)<br>
 Source: а х н у в ш и м <br>
