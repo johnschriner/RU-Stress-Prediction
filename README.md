@@ -31,7 +31,7 @@ Adjectives:<br>
 шо́рт = short<br>
 языкотво́рческому = language-creative<br>
 <br>
-Comparative Adjectives:<br>
+Comparative Adjectives (Comp):<br>
 44874/301472 = 14% of all words<br>
 поуро́дливей = uglier
 поуде́льнее = more private<br>
@@ -41,11 +41,11 @@ Comparative Adjectives:<br>
 поанорма́льнее = more abnormal<br>
 поненорма́льнее = more abnormal<br>
 
-
 Verbs:<br>
 Because the data takes into account morphology, many words, particularly verbs have 10 or more entries.  <br>
 шосси́ровавшей (on the road; to highway(?)) has 48 entries.  эшелонировавшие (to arrange in echelon formation) has 24 entries.<br>
 This could skew the training as it gives more weigh to certain stress placement, and even provides exact copies (for morphological experiments) in dev and test that the NN was trained on.<br>
+A solution is lexeme-aware splitting of the data.<br>
 
 Nouns:<br>
 No known regularity.
