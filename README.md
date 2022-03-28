@@ -40,6 +40,17 @@ Comparative Adjectives (Comp):<br>
 починне́е = better<br>
 поанорма́льнее = more abnormal<br>
 поненорма́льнее = more abnormal<br>
+<br>
+96771 adjectives (removed unstressed adjectives)<br>
+3667 with a stresscode of 0: 3.78%<br>
+31554 with a stresscode of 1: 32.6%<br>
+42052 with a stresscode of 2: 43.45%<br>
+17223 with a stresscode of 3: 17.79%<br>
+2022 with a stresscode of 4: 2.08%<br>
+241 with a stresscode of 5: .25% <br>
+5 with a stresscode of 6: .005%<br>
+
+The adjectives have an average length of 13 characters so our data suggests that even with consonant clusters the majority of adjectives have the stress towards the end of the word or nearer the middle, e.g. понорма́льней <br>
 
 Verbs:<br>
 Because the data takes into account morphology, many words, particularly verbs have 10 or more entries.  <br>
