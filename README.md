@@ -86,7 +86,7 @@ Source: а х н у в ш и м<br>
 Target: 2<br>
 <br>
 Experiment03 - Stresscode Prediction β - Given the grapheme with a trailing stresscode, predict stress placement.<br>
-n.b. this experiment is to guage the efficacy of the stresscodes; the results should be near-perfect <br>
+n.b. this experiment is to gauge the efficacy of the stresscodes; the results should be near-perfect <br>
 Source: а х н у в ш и м 2<br>
 Target: а́ х н у в ш и м<br>
 <br>
@@ -160,7 +160,7 @@ fairseq-train \
     --lr .001 \
     --max-update 800\
     --no-epoch-checkpoints \
-    --batch-size 500 \
+    --batch-size 5000 \
     --clip-norm 1 \
     --label-smoothing .1 \
     --optimizer adam \
@@ -201,7 +201,7 @@ fairseq-train \
     --lr .001 \
     --max-update 800\
     --no-epoch-checkpoints \
-    --batch-size 500 \
+    --batch-size 3000 \
     --clip-norm 1 \
     --label-smoothing .1 \
     --optimizer adam \
@@ -248,7 +248,7 @@ fairseq-train \
 Noted errors were on successful placement of _secondary_ stress (the grave accent), something that the stresscode-creation was unaware of.<br>
 <br>
 Experiment03 - Stresscode Prediction β - Given the grapheme with a trailing stresscode, predict stress placement.<br>
-n.b. this experiment is to guage the efficacy of the stresscodes; the results should be near-perfect <br>
+n.b. this experiment is to gauge the efficacy of the stresscodes; the results should be near-perfect <br>
 Source: а х н у в ш и м 2<br>
 Target: а́ х н у в ш и м<br>
 <br>
