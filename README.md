@@ -74,8 +74,8 @@ Each grapheme has been given an associated stresscode:<p>
 <br>
 -1 for words without explicit stress in the dataset<br>
 <br>
-## There will be seven experiments:<p>
-
+## There will be eight experiments:<p>
+<br>
 Experiment01 - Baseline Prediction - Given the grapheme without a stress, predict stress placement <br>
 n.b. in this notation (and depending on your device), the accent is on the preceding vowel (e.g. on the \<a>\)<br>
 Source: а х н у в ш и м <br>
@@ -96,7 +96,8 @@ Target: а́ х н у в ш и м<br>
 <br>
 Experiment05 - Stress Prediction with lemma feature β- Given the word's lemma, predict the stresscode<br>
 Source: а х н у в ш и м ахнуть<br>
-Target: 2   <br>
+Target: 2   
+<br>
 Experiment06 - Stress Prediction with morphological feature  α - Given all of the word's morphological features, predict the stress placement<br>
 Source: а х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
 Target: а́ х н у в ш и м<br>
@@ -216,59 +217,74 @@ fairseq-train \
     --decoder-layers 1 \
 ```
 <br>
-`WER on dev = 22.18`
-`WER on test = 22.28`
+  
+`WER on dev = 22.18`<br>
+`WER on test = 22.28`<br>
+  
 <br>
 Experiment02 - Stresscode Prediction α - Trained on a grapheme and its calculated stresscode, predict the stresscode<br>
 Source: а х н у в ш и м<br>
 Target: 2<br>
 <br>
- 
-`WER on dev = 14.00`
-`WER on test = 13.93`
+  
+`WER on dev = 14.00`<br>
+`WER on test = 13.93`<br>
+  
 <br>
 Experiment03 - Stresscode Prediction β - Given the grapheme with a trailing stresscode, predict stress placement.<br>
 n.b. this experiment is to gauge the efficacy of the stresscodes; the results should be very good <br>
 Source: а х н у в ш и м 2<br>
 Target: а́ х н у в ш и м<br>
 <br>
-`WER on dev = 11.47`
-`WER on test = 11.61`
+  
+`WER on dev = 11.47`<br>
+`WER on test = 11.61`<br>
+  
 <br>
 Experiment04 - Stress Prediction with lemma feature α- Given the word's lemma, predict the stress placement<br>
 Source: а х н у в ш и м ахнуть<br>
 Target: а́ х н у в ш и м<br>
 <br>
-`WER on dev = 15.89`
-`WER on test = 16.37`
+  
+`WER on dev = 15.89`<br>
+`WER on test = 16.37`<br>
+  
 <br>
 Experiment05 - Stress Prediction with lemma feature β- Given the word's lemma, predict the stresscode<br>
 Source: а х н у в ш и м ахнуть<br>
 Target: 2   <br>
 <br>
-`WER on dev = 6.5`
-`WER on test = 6.39`
+  
+`WER on dev = 6.5`<br>
+`WER on test = 6.39`<br>
+  
 <br>
 Experiment06 - Stress Prediction with morphological feature  α - Given all of the word's morphological features, predict the stress placement<br>
 Source: а х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
 Target: а́ х н у в ш и м<br>
 <br>
-`WER on dev = 24.03`
-`WER on test = 24.06`
+  
+`WER on dev = 24.03`<br>
+`WER on test = 24.06`<br>
+  
 <br>
 Experiment07 - Stress Prediction with morphological feature β - Given only word's part of speech feature, predict the stress placement<br>
 Source: а х н у в ш и м V<br>
 Target: а́ х н у в ш и м<br>
 <br>
-`WER on dev = 22.89`
-`WER on test = 22.53`
+  
+`WER on dev = 22.89`<br>
+`WER on test = 22.53`<br>
+  
 <br>
 Experiment08 - Stresscode Prediction with morphological feature - Given the word's part of speech feature, predict the stresscode<br>
 Source: а х н у в ш и м V<br>
 Target: 2<br>
 <br>
-`WER on dev = 15.84`
-`WER on test = 16.14`
+  
+`WER on dev = 15.84`<br>
+`WER on test = 16.14`<br>
+  
 
 ## Conclusions and Discussion
 While morphological features may be copied over successfully during training, deriving the lemma isn't nearly as straight-forward.<br>
