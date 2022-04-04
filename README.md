@@ -87,7 +87,7 @@ n.b. in this notation (and depending on your device), the accent is on the prece
 Source: а х н у в ш и м <br>
 Target: а́ х н у в ш и м <br>
 <br>
-Experiment 02 - Stresscode Prediction α - Trained on a grapheme and its calculated stresscode, predict the stresscode<br>
+Experiment 02 - Stresscode Prediction α - Given a grapheme, predict the stresscode<br>
 Source: а х н у в ш и м<br>
 Target: 2<br>
 <br>
@@ -254,7 +254,7 @@ Of these, 223 contained stress: an error 16% of the time, save for very few exce
 <br>
 <br>
   
-## Experiment 02 - Stresscode Prediction α - Trained on a grapheme and its calculated stresscode, predict the stresscode<br>
+## Experiment 02 - Stresscode Prediction α - Given a grapheme, predict the stresscode<br>
   
 Source: а х н у в ш и м<br>
 Target: 2<br>
