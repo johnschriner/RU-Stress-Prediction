@@ -294,7 +294,7 @@ Target: а́ х н у в ш и м<br>
 |к о ̀ е н а с ч ё ̀ т к а к о ́ г о|к о е н а с ч ё т к а к о ́ г о|Correctly predicted stress and disregarded secondary stress|
 |п о д в а д ц а т и ̀ ч е т ы р ё х л е ́ т н е й|п о д в а д ц а т и ч е т ы р ё х л е ́ т н е й|Correctly predicted stress because it located after the [ё]; the derived stresscode would be different if the [ё] was after the stressed vowel|
 |ё ̀ ж - р ы ́ б у|ё ж - р ы ́ б у|The stresscode system is unaware of placing secondary stress properly|
-|к о ̀ е п у т ё ̀ м ч е г о ́|к о е п у т ё м ч е г о ́|The predictions are correct for the primary stress but not for any secondary stress (in this case two characters|
+|к о ̀ е п у т ё ̀ м ч е г о ́|к о е п у т ё м ч е г о ́|The predictions are correct for the primary stress but not for any secondary stress (in this case two characters)|
 |о ̀ л и г о м е ́ р н о м у|о л и г о м е ́ р н о м у|Another example of this, indicating why there's a word error rate of 11.61|
 <br>  
 <br>
@@ -318,7 +318,7 @@ Target: а́ х н у в ш и м<br>
 |э о ́ л о в ы|э о ́ л о в ы|эолов | With roots and regular conjugation|
 |ё ж и к о м|ё ж и к о м|ёжик | Correctly predicted|
 |щ е н к а м|щ е н к а ́ м|щенок | .35% of the data has no stress indicated; the predicted stress on [а] is incorrect|
-|ш е ́ п ч у щ е ю|ш е ́ п ч у щ е ю | шептать||
+|ш е ́ п ч у щ е ю|ш е ́ п ч у щ е ю | шептать|Correctly predicted.  This is 1 of our 708 forms of шептать|
 |е ́ щ у щ е г о|е ́ щ у щ е г о|блистать | The root with the gloss _to shine_ is seemingly unrelated; the result is correct|
 |ш о ́ р т и к а х|ш о ́ р т и к а х|шортики | Correctly predicted given the lemma|
 <br>
@@ -335,7 +335,7 @@ Target: 2   <br>
 
 |Target |Hypothesis | Lemma | Notes |
 |------|------------|--------|--------|
-|д о ч е р и|0|дочь|Incorrectly predicted 0 instead of [о]|
+|д о ч е р и|0|дочь|Incorrectly predicted oxytone instead of proparoxytone stress|
 |щ е р и в ш и е с я|4|щериться|Correctly predicted the [е] in [ери]|
 |у р о б а к т е р и и|2|уробактерия|Correctly predicted the [е] in [ери]|
 |щ е р и в ш е г о с я|4|щериться|Correctly predicted the [е] in [ери]|
@@ -430,13 +430,6 @@ Target: 2<br>
 |и с к р и с т у ю|3|Adjective|Incorrectly predicted the initial [и]; stress is on middle [и]|
 |п о г р о б о в е й|1|Adjective|Incorrectly predicted a paroxytone stress; stress is on oxytone [е]|
 <br>
-
-## Conclusions and Discussion
-TO DO: Look at adjectives -- is it true that they are REGULARLY stressed on the first syllable? (Jouravlev and Lupker) No, I don't think so.<br>
-TO DO: Look at other POS
-TO DO: Look more into consistency, lexical stress.<br>
-TO DO: Hall & Sproat's contribution<br>
-TO DO: lexicon of stress homographs, a quantitative write-up and appendix<br>
   
 
   
