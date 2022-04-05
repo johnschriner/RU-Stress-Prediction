@@ -292,7 +292,7 @@ Target: а́ х н у в ш и м<br>
 |п л о х о ́ м|п л о х о ́ м|Correctly predicted|
 |ё р ш и к и|ё р ш и к и|Correctly predicted the stress on [ё]|
 |к о ̀ е н а с ч ё ̀ т к а к о ́ г о|к о е н а с ч ё т к а к о ́ г о|Correctly predicted stress and disregarded secondary stress|
-|п о д в а д ц а т и ̀ ч е т ы р ё х л е ́ т н е й|п о д в а д ц а т и ч е т ы р ё х л е ́ т н е й|Correctly predicted stress because it located after the [ё]; the derived stresscode would be different if the [ё] was after the stressed vowel|
+|п о д в а д ц а т и ̀ ч е т ы р ё х л е ́ т н е й|п о д в а д ц а т и ч е т ы р ё х л е ́ т н е й|Correctly predicted stress because it is located after the [ё]; the derived stresscode would be different if the [ё] was after the stressed vowel|
 |ё ̀ ж - р ы ́ б у|ё ж - р ы ́ б у|The stresscode system is unaware of placing secondary stress properly|
 |к о ̀ е п у т ё ̀ м ч е г о ́|к о е п у т ё м ч е г о ́|The predictions are correct for the primary stress but not for any secondary stress (in this case two characters)|
 |о ̀ л и г о м е ́ р н о м у|о л и г о м е ́ р н о м у|Another example of this, indicating why there's a word error rate of 11.61|
