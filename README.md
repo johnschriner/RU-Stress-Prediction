@@ -80,6 +80,7 @@ Each grapheme has been given an associated stresscode:<p>
 Stress is marked on [ё] although there are 2000 exceptions in the data (e.g. шёлкотка́ной, or with secondary stress, e.g потрё̀хме́сячней)<br>
 12790 contain an [ё].  2000 of those also contain an explicit stress: 15.63%<br>
 <br>
+31332 (10.39% of all words) contain a secondary stress marked as a grave accent: ̀<br>
 ## There will be eight experiments:<p>
 <br>
 Experiment 01 - Baseline Prediction - Given the grapheme without a stress, predict stress placement <br>
