@@ -76,7 +76,7 @@ Each grapheme has been given an associated stresscode:<p>
 2 for stress on the third-from-last syllable, proparoxytone stress<br>
 3+ for stress towards the beginning of the word<br>
 <br>
--1 for words without explicit stress in the dataset<br>
+-1 (later NULL) for words without explicit stress in the dataset<br>
 Stress is marked on [ё] although there are 2000 exceptions in the data (e.g. шёлкотка́ной, or with secondary stress, e.g потрё̀хме́сячней)<br>
 12790 contain an [ё].  2000 of those also contain an explicit stress: 15.63%<br>
 <br>
