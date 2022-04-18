@@ -103,7 +103,7 @@ Target: а́ х н у в ш и м<br>
 <br>
 Experiment 05 - Stress Prediction with lemma feature β- Given the word's lemma, predict the stresscode<br>
 Source: а х н у в ш и м ахнуть<br>
-Target: 2   
+Target: 2   <br>
 <br>
 Experiment 06 - Stress Prediction with morphological feature  α - Given all of the word's morphological features, predict the stress placement<br>
 Source: а х н у в ш и м V Perf PstAct Neu AnIn Sg Ins<br>
@@ -165,11 +165,11 @@ fairseq-train \
     --source-lang ru.s \
     --target-lang ru.t \
     --encoder-bidirectional \
-    --seed {variable} \
+    --seed {variable} \ 
     --arch lstm \
     --dropout 0.2 \
     --lr .001 \
-    --max-update 800\
+    --max-update 800 \
     --no-epoch-checkpoints \
     --batch-size 5000 \
     --clip-norm 1 \
