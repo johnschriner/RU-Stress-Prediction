@@ -1,5 +1,6 @@
 # RU-Stress-Prediction
-using Zaliznjak's dictionary and stresscodes I use FairSeq to predict Russian stress<br>
+Schriner, John, 2025, "Replication Data for: Predicting Stress in Russian using Modern Machine-Learning Tools", https://doi.org/10.18710/AAFCJP, DataverseNO, V1 <p>
+Using Zaliznjak's dictionary and stresscodes I use FairSeq to predict Russian stress.<br>
 
 ## The Data
 
